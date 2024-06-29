@@ -1,0 +1,19 @@
+function decimalToBinary($decimal) {
+    if ($decimal === 0) {
+        return "0";
+    }
+
+    $binary = '';
+    while ($decimal > 0) {
+        // Extract the least significant bit (0 or 1)
+        $binary = ($decimal & 1) . $binary;
+        // Shift the number right by 1 bit
+        $decimal = $decimal >> 1;
+    }
+
+    return $binary;
+}
+
+echo decimalToBinary(10);  // Outputs: 1010
+echo decimalToBinary(0);   // Outputs: 0
+echo decimalToBinary(255); // Outputs: 11111111
